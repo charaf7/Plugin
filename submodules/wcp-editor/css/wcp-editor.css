@@ -1346,3 +1346,11 @@ Colors:
     width: 100%;
     background: #511f46;    
 }
+
+/*hide x and y positions from the sizing of the form */
+#wcp-editor-form-control-x, #wcp-editor-form-control-y{
+    display: none;
+}
+#wcp-editor-form-control-border_style{
+    display: none !important;
+}

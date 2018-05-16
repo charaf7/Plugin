@@ -1222,7 +1222,7 @@
             html += '       <div id="dropzone-'+ this.elementID +'" style="margin-top: 5px;">'
             html += '           <button style="margin-right:5px; height: 45px;" id="add-' + this.elementID + '" class="btn btn-success fileinput-button-' + this.elementID +' dz-clickable">'
             html += '               <i class="glyphicon glyphicon-plus"></i>'
-            html += '               <span>Add files...</span>'
+            html += '               <span>Ajouter</span>'
             html += '           </button>'
             html += '           <span id="max-dz-upload-'+ this.elementID + '" style="display:none;color:red">Maximun 1 image</span>';
             html += '           <img src="" id="logo-'+ this.elementID +'" style="max-height:45px; float:right;"></img>';
@@ -2187,11 +2187,11 @@
             html += '   </div>'
             html += '   <div class="dz-btn">'
             /*-- ONLY FOR TEST WITH autoQueu False on Dropzone ----*/
-            html += '        <button class="btn btn-primary start">'
+            html += '        <button class="btn btn-primary start" data-wcp-tooltip="Charger" data-wcp-tooltip-position="bottom">'
             html += '            <i class="glyphicon glyphicon-upload"></i>'
             // html += '            <span>Start</span>'
             html += '        </button>'
-            html += '       <button data-dz-remove class="btn btn-danger delete">'
+            html += '       <button data-dz-remove class="btn btn-danger delete" data-wcp-tooltip="Supprimer" data-wcp-tooltip-position="bottom">'
             html += '           <i class="glyphicon glyphicon-trash"></i>'
             // html += '            <span>Delete</span>'
             html += '       </button>'
@@ -2320,7 +2320,7 @@
             html += '       <div style="margin-top: 5px;">'
             html += '           <button style="margin-right:5px;" id="add-' + this.elementID + '" class="btn btn-success fileinput-button-' + this.elementID +' dz-clickable">'
             html += '               <i class="glyphicon glyphicon-plus"></i>'
-            html += '               <span>Add files...</span>'
+            html += '               <span>Ajouter une image</span>'
             html += '           </button>'
             html += '           <span id="max-dz-upload-'+ this.elementID + '" style="display:none;color:red">Maximun 1 image</span>';
             // for (var i = 0; i < this._value.nbr; i++) {

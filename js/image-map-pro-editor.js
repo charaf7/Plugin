@@ -3100,8 +3100,8 @@
 
 		var s = $.extend(true, {}, default_spot_settings);
 		s.type = 'spot';
-		s.default_style.icon_svg_path = $.webcraft_icon_library[3][1];
-		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[3][0];
+		s.default_style.icon_svg_path = $.webcraft_icon_library[39][1];
+		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[39][0];
 		s.id = self.createIdForSpot();
 		s.title = s.id;
 
