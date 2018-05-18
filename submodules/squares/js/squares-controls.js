@@ -988,15 +988,34 @@
             html += '<textarea class="squareEditorTextarea" style="display:none" id="'+ this.elementID +'" rows="5"></textarea>';
             html += '<div class="squareEditorShowTextarea">' + v + '</div>'
             html += '<div style="display:block; float:right; margin-top:5px;">'
-            html += '   <button style="background:#7757ce" id="editsummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Editer</button>'
-            html += '   <button style="background:#a3adb5" id="savesummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Sauvegarder</button>'
+            //html += '   <button style="background:#7757ce;border-color:#7757ce" id="editsummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Editer</button>'
+            html += '   <button style="background:#a3adb5;border-color:#a3adb5" id="savesummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Sauvegarder</button>'
             html += '</div>'
             return html;
         },
         init: function() {
             var self = this;
+            // ADDED TO JUST CLICK IN THE .squareEditor AND SHOW THE EDIT ZONE
+            $(document).on('click', '.squareEditorShowTextarea', function() {
+                //$('#editsummer-' + self.elementID).css('background','#a3adb5')
+                $('#savesummer-' + self.elementID).css('background','#7757ce')
+                $('.squareEditorTextarea').summernote({
+                    toolbar: [
+                        ["color", ["color"]],
+                        ["fontname", ["fontname"]],
+                        ['fontsize', ['fontsize']],
+                        ["font", ["bold", "italic", "underline"]],
+                        ["para", ["ul", "ol", "paragraph"]],
+                        ["insert", ["link", "picture"]],
+                        ["view", ["fullscreen", "codeview", "help"]]
+                    ],
+                    focus: true,
+                });
+                $('.squareEditorShowTextarea').hide();
+            });
+
             $(document).on('click', '#editsummer-' + self.elementID, function() {
-                $('#editsummer-' + self.elementID).css('background','#a3adb5')
+                //$('#editsummer-' + self.elementID).css('background','#a3adb5')
                 $('#savesummer-' + self.elementID).css('background','#7757ce')
                 $('.squareEditorTextarea').summernote({
                     toolbar: [
@@ -1013,7 +1032,7 @@
                 $('.squareEditorShowTextarea').hide();
             });
             $(document).on('click', '#savesummer-' + self.elementID, function() {
-                $('#editsummer-' + self.elementID).css('background','#7757ce')
+                //$('#editsummer-' + self.elementID).css('background','#7757ce')
                 $('#savesummer-' + self.elementID).css('background','#a3adb5')
                 var markup = $('.squareEditorTextarea').summernote('code');
                 self.valueChanged();

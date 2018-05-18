@@ -701,8 +701,9 @@ The usage scenario is the following (for now):
         this.appendAddElementsButton();
     };
     Squares.prototype.appendAddContainerButton = function() {
-        var addContainerButtonHTML = '<div class="sq-add-container"><i class="fa fa-plus"></i> <span>Ajouter un bloc d\'éléments</span></div>';
-
+         //COMMENTED FUNCTION FOR THE NOT NEED
+        //var addContainerButtonHTML = '<div class="sq-add-container"><i class="fa fa-plus"></i> <span>Ajouter un bloc d\'éléments</span></div>';
+        var addContainerButtonHTML = '';
         this.root.append(addContainerButtonHTML);
     };
     Squares.prototype.appendAddElementsButton = function() {

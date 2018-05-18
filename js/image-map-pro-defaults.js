@@ -45,7 +45,7 @@
 			icon_svg_path: 'M111.575,5.462l34.489,69.827l77.087,11.226l-55.778,54.371l13.17,76.784l-68.958-36.267      l-68.958,36.267l13.18-76.784L0,86.525l77.096-11.226L111.575,5.462',
 			icon_svg_viewbox: '0 0 223.151 223.151',
 			icon_fill: '#6A2943',
-			icon_url: '',
+			icon_url: 'Coller l\'URL d\'une icône ici',
 			icon_is_pin: 1,
 			icon_shadow: 0,
 			use_icon_style: 1,
@@ -84,18 +84,32 @@
 		},
 		tooltip_content: {
 			content_type: 'plain-text',
-			plain_text: 'Lorem Ipsum',
+			plain_text: 'Title de la partie',
 			plain_text_color: '#ffffff',
 			squares_settings: {
 				containers: [{
 					id: "sq-container-403761",
 					settings: {
-						elements: [{
+						elements: [
+						{
 							settings: {
-								name: "Paragraph",
+								name: "Titre",
+								iconClass: "fa fa-font"
+							},
+						},
+						{
+							settings: {
+								name: "Image",
+								iconClass: "fa fa-camera"
+							},
+						},
+						{
+							settings: {
+								name: "Texte",
 								iconClass: "fa fa-paragraph"
-							}
-						}]
+							},
+						},
+						]
 					}
 				}]
 			}
@@ -164,16 +178,16 @@
 		phase:{
 			phase_popover_exist:0,
 			phase_header_exist:0,
-			phase_accroche:'Phrase d\'accroche',
-			phase_descriptif:'ocusamus et iusto odios',
+			phase_accroche:'Rédigez une phrase d\'accroche',
+			phase_descriptif:'Rédigez un texte introductif court et attractif ! <br>Interpeler vos publics avec des anecdotes et des informations inédites.',
 			phase_fond_color:'#FF6631',
 			phase_contour_color:'#FF6631',
 			phase_text_color:'#FFFFFF',
 		},
 		infosplus:{
 			infosplus_exist:0,
-			infosplus_title:'Acusamus et iusto odixxo',
-			infosplus_descriptif:'ocusamus et iusto odios',
+			infosplus_title:'Phrase d\'accroche de l\'info plus',
+			infosplus_descriptif:'Vous souhaitez donner plus d\'informations à vos visiteurs, publiez ici un texte de 150 mots max.',
 			infosplus_fond_color:'#FF6631',
 			infosplus_contour_color:'#FF6631',
 			infosplus_text_color:'#FFFFFF',

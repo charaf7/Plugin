@@ -53,9 +53,9 @@ Colors:
     display: flex;
     flex-direction: column;
 }
-#wcp-editor-form-control-phase_descriptif{
+/* #wcp-editor-form-control-phase_descriptif{
     max-width: 276px;
-}
+} */
 .squareEditorShowTextarea{
     word-break: break-all;;
     margin-top: 10px;
@@ -63,14 +63,23 @@ Colors:
     padding: 5px;
     border: 2px solid;
     background-color: #ededed;
-    border-color: #6c6a6a;
+    border: 2px solid #bcbcbc;
+    border-radius: 5px;
+    word-break: inherit;
+    max-height: 300px;
+    overflow: hidden;
+    cursor: pointer;
 }
 .wcpEditorShowTextarea{
     word-break: break-all;;
     margin-top: 10px;
-    max-width: 276px;
     padding: 5px;
-    border: 2px solid;
+    width: 25vw;
+    border: 2px solid #bcbcbc;
+    background-color: #ededed;
+    border-radius: 5px;
+    word-break: inherit;
+    cursor: pointer;
 }
 #wcp-editor-left * {
     box-sizing: border-box;
@@ -99,7 +108,7 @@ Colors:
     line-height: 40px;
     text-align: center;
     /* margin-top: -40px; */
-    width: 25.5vw;
+    width: 35.5vw;
     height: 40px;
     top: 0px;
     background-color:white;
@@ -113,9 +122,9 @@ Colors:
     line-height: 30px;
     position: fixed;
     text-align: center;
-    width: 70%;
+    width: 47%;
     margin: auto;
-    left: 230px;
+    left: 170px;
     bottom: 0px;
 }
 #wcp-editor-phrase-accroche-title{
@@ -132,10 +141,11 @@ Colors:
     width: 64%;
     word-break: break-all;
     line-height: 16px;
-    padding: 2px;
+    padding: 21px;
     text-align: justify;
     border-top:none!important;
     border-bottom:none!important;
+    word-break: inherit;
 }
 #wcp-editor-phrase-accroche-title h3{
     font-size: 20px;
@@ -204,6 +214,7 @@ Colors:
   .wcp-editor-infosplus-wrap .wcp-editor-infosplus-content h3 {
     text-align: center;
     color:#502044;
+    font-size: 19px;
   }
   .wcp-editor-infosplus-wrap .wcp-editor-infosplus-content a {
     color:#502044;
@@ -261,6 +272,7 @@ Colors:
     position: relative;
     opacity: 1;
     transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    text-align: center;
   }
   .wcp-editor-infosplus-content-infos{
     transition: transform 0.2s;
@@ -435,7 +447,7 @@ Colors:
 }
 #wcp-editor-main-tab-contents .wcp-editor-main-tab-content {
     flex: 1;
-    width: 25.5vw;
+    width: 35.5vw;
     display: flex;
     flex-direction: column;
     background: #ffffff;
@@ -1287,7 +1299,7 @@ Colors:
 }
 
 .wcp-general-settings{
-    width: 25.5vw;
+    width: 35.5vw;
     height: 0px;
     background: white;
     z-index: 999;
@@ -1353,4 +1365,14 @@ Colors:
 }
 #wcp-editor-form-control-border_style{
     display: none !important;
+}
+/* Point d'intéret selecionné params box*/
+[data-wcp-main-tab-content-name="Shape"]{
+    width: 25.5vw !important;
+}
+/*color picker cursor and width*/
+[type="color"]{
+    cursor: pointer;
+    width: 45px !important;
+    height: 45px !important;
 }

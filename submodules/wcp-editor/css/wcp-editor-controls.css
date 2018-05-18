@@ -23,6 +23,7 @@ Author: Nikolay Dyankov
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    text-align: left;
 }
 
 .wcp-editor-form-control input, .wcp-editor-form-control textarea, .wcp-editor-form-control select {

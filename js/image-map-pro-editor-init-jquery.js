@@ -236,7 +236,7 @@
                     {
                         type: 'switch',
                         name: 'phase_popover_exist',
-                        title: 'Activer Phase d\'accroche',
+                        title: 'Activer la prhase d\'accroche',
                         value: $.imageMapProDefaultSettings.phase.phase_popover_exist
                     },
                     {
@@ -249,7 +249,7 @@
                     {
                         type: 'text',
                         name: 'phase_accroche',
-                        title: 'Phrase d\'accroche de la mini-expositon :',
+                        title: 'Phrase d\'accroche',
                         value: $.imageMapProDefaultSettings.phase.phase_accroche
                     },
                     {
@@ -261,19 +261,19 @@
                     {
                         type: 'color',
                         name: 'phase_fond_color',
-                        title: 'Fond',
+                        title: 'Couleur de fond',
                         value: $.imageMapProDefaultSettings.phase.phase_fond_color,
                     },
                     {
                         type: 'color',
                         name: 'phase_contour_color',
-                        title: 'Contours',
+                        title: 'Couleur des contours',
                         value: $.imageMapProDefaultSettings.phase.phase_contour_color,
                     },
                     {
                         type: 'color',
                         name: 'phase_text_color',
-                        title: 'Texte',
+                        title: 'Couleur du texte',
                         value: $.imageMapProDefaultSettings.phase.phase_text_color,
                     }
                 ]
@@ -286,7 +286,7 @@
                     {
                         type: 'switch',
                         name: 'infosplus_exist',
-                        title: 'Activer l\infos plus',
+                        title: 'Activer l\'infos plus',
                         value: $.imageMapProDefaultSettings.infosplus.infosplus_exist
                     },
                     {
@@ -492,17 +492,17 @@
                     {
                         type: 'button group',
                         name: 'icon_type',
-                        title: 'Type d\'icône',
+                        title: '',
                         options: [
-                            { value: 'library', title: 'Bibliothèque' },
-                            { value: 'custom', title: 'Personnalisable' },
+                            // { value: 'library', title: 'Bibliothèque' },
+                            // { value: 'custom', title: 'Personnalisable' },
                         ],
                         value: $.imageMapProDefaultSpotSettings.default_style.icon_type
                     },
                     {
                         type: 'button',
                         name: 'choose_icon_from_library',
-                        title: 'Choisissez parmi la bibliothèque',
+                        title: 'Utilisez la bibliothèque d\'icônes',
                         options: { event_name: 'button-choose-icon-clicked' },
                         value: undefined
                     },
@@ -523,7 +523,7 @@
                     {
                         type: 'text',
                         name: 'icon_url',
-                        title: 'URL Icône',
+                        title: 'Ou l\'URL d\'une icône',
                         value: $.imageMapProDefaultSpotSettings.default_style.icon_url
                     },
                     {

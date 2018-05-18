@@ -3073,6 +3073,8 @@
 
 		var s = $.extend(true, {}, default_spot_settings);
 		s.type = 'geo';
+		s.default_style.icon_svg_path = $.webcraft_icon_library[25][1];
+		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[25][0];
 		s.id = self.createIdForGeo();
 		s.title = s.id;
 
@@ -3085,8 +3087,8 @@
 
 		var s = $.extend(true, {}, default_spot_settings);
 		s.type = 'infoslegale';
-		s.default_style.icon_svg_path = $.webcraft_icon_library[31][1];
-		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[31][0];
+		s.default_style.icon_svg_path = $.webcraft_icon_library[32][1];
+		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[32][0];
 		s.id = self.createIdForInfos();
 		s.title = s.id;
 
@@ -3686,13 +3688,13 @@
 				$.wcpEditorFormShowControl('Shape Settings', 'icon_type');
 
 				if (s.default_style.icon_type == 'library') {
-					$.wcpEditorFormHideControl('Shape Settings', 'icon_url');
+					$.wcpEditorFormShowControl('Shape Settings', 'icon_url');
 					$.wcpEditorFormShowControl('Shape Settings', 'choose_icon_from_library');
 					$.wcpEditorFormShowControl('Shape Settings', 'use_icon_style');
 				}
 
 				if (s.default_style.icon_type == 'custom') {
-					$.wcpEditorFormShowControl('Shape Settings', 'icon_url');
+					$.wcpEditorFormHideControl('Shape Settings', 'icon_url');
 					$.wcpEditorFormHideControl('Shape Settings', 'choose_icon_from_library');
 					$.wcpEditorFormHideControl('Shape Settings', 'use_icon_style');
 				}

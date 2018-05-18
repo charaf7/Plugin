@@ -59,17 +59,35 @@ To be rewritten
             html += '<textarea class="wcpEditorTextarea" style="display:none" id="wcpEditorTextarea-'+ this.elementID +'" rows="5"></textarea>';
             html += '<div id="wcpEditorShowTextarea-'+ this.elementID +'" class="wcpEditorShowTextarea"></div>'
             html += '<div style="display:block; margin-top:5px;">'
-            html += '   <button style="background:#7757ce" id="editsummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Editer</button>'
-            html += '   <button style="background:#a3adb5" id="savesummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Sauvegarder</button>'
+            //html += '   <button style="background:#7757ce;border-color:#7757ce" id="editsummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Editer</button>'
+            html += '   <button style="background:#a3adb5,border-color:#a3adb5" id="savesummer-' + this.elementID + '" class="btn btn-primary btnedit" type="button">Sauvegarder</button>'
             html += '</div>'
             html += '</div>'
             return html;
         },
         init: function() {
             var self = this;
-            
+            // ADDED TO JUST CLICK ON THE ZONE TO EDIT, WHITOUT THE EDIT BUTTON
+            $(document).on('click', '.wcpEditorShowTextarea', function() {
+                //$('#editsummer-' + self.elementID).css('background','#a3adb5')
+                $('#savesummer-' + self.elementID).css('background','#7757ce')
+                $('#wcpEditorTextarea-' + self.elementID).summernote({
+                    toolbar: [
+                        ["color", ["color"]],
+                        ["fontname", ["fontname"]],
+                        ['fontsize', ['fontsize']],
+                        ["font", ["bold", "italic", "underline"]],
+                        ["para", ["ul", "ol", "paragraph"]],
+                        ["insert", ["link", "picture"]],
+                        ["view", ["fullscreen", "codeview", "help"]]
+                    ],
+                    focus: true,
+                });
+                $('#wcpEditorShowTextarea-' + self.elementID).hide();
+            });
+            // Not used anymore, edit button is hidded
             $(document).on('click', '#editsummer-' + this.elementID, function() {
-                $('#editsummer-' + self.elementID).css('background','#a3adb5')
+                //$('#editsummer-' + self.elementID).css('background','#a3adb5')
                 $('#savesummer-' + self.elementID).css('background','#7757ce')
                 $('#wcpEditorTextarea-' + self.elementID).summernote({
                     toolbar: [

@@ -23,14 +23,14 @@
                 css: {
                     name: 'CSS',
                     type: 'text',
-                    default: "font-family: 'Open Sans', sans-serif; font-size: 14px; margin-bottom: 0px; padding: 10px;"
+                    default: "font-family: 'Open Sans', sans-serif; font-size: 14px; margin-bottom: 0px; padding: 21px; word-break: initial; text-align: justify;"
                 }
             },
             titre: {
                 text: {
                     name: 'Titre',
                     type: 'textarea',
-                    default: 'Lorem Ipsum'
+                    default: 'Titre (cliquez pour éditer).'
                 },
             }
         },
@@ -81,7 +81,7 @@
 
     /*------- Creating Paragraph element OK-------*/
     var paragraphElementOptions = {
-        name: "Paragraphe",
+        name: "Texte",
         iconClass: "fa fa-paragraph",
         controls: {
             general: {
@@ -98,14 +98,14 @@
                 css: {
                     name: 'CSS',
                     type: 'text',
-                    default: "font-family: 'Open Sans', sans-serif; font-size: 14px; padding: 10px; "
+                    default: "font-family: 'Open Sans', sans-serif; font-size: 14px; padding: 21px; word-break: initial; text-align: justify; "
                 }
             },
             text: {
                 text: {
                     name: 'Texte',
                     type: 'textarea',
-                    default: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.'
+                    default: 'Texte (cliquez pour éditer).'
                 }
             }
         },
@@ -2118,7 +2118,7 @@
                     name: 'Selectionner votre quiz',
                     type: 'Quizz',
                     default: {
-                        html:'<div style="padding:10px; font-size:14px;"><p>Choisissez un quiz dans la liste déroulante dans paramètre</p></div>',
+                        html:'<div style="padding:10px; font-size:14px;"><p>Choisissez un quiz de la liste</p></div>',
                         quizz: 3,
                         title: '',
                         quizzId:'',

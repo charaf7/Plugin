@@ -1184,7 +1184,11 @@ and a setter.
         $("#wcp-editor-title-proj").children().hide();
         $(".wcp-general-settings").children().hide();
         $(".wcp-general-settings").removeClass("showParam");
-        $("#wcp-editor-title-proj").animate({top : '0px',});        
+        $("#wcp-editor-title-proj").animate({top : '0px',});       
+        //center accroche
+        $("#wcp-editor-phrase-accroche").css({left : '0px',}); 
+        //infoplus
+        $("#wcp-editor-infosplus").css({width : '38%', bottom : '110px'}); 
 
     }
     WCPEditor.prototype.setPreviewModeOff = function() {
@@ -1203,6 +1207,11 @@ and a setter.
         //show the params
         $("#wcp-editor-title-proj").animate({height : '40px',});
         $("#wcp-editor-title-proj").children().show();
+        //center accroche
+        $("#wcp-editor-phrase-accroche").css({left : '170px',});
+        //infoplus
+        $("#wcp-editor-infosplus").css({width : '100%', bottom : '60px'}); 
+
 
     }
     WCPEditor.prototype.showExtraMainButton = function(buttonName) {
