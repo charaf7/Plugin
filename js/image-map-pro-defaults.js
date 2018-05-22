@@ -84,7 +84,7 @@
 		},
 		tooltip_content: {
 			content_type: 'plain-text',
-			plain_text: 'Title de la partie',
+			plain_text: 'Titre de la partie',
 			plain_text_color: '#ffffff',
 			squares_settings: {
 				containers: [{

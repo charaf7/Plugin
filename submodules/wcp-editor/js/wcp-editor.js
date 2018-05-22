@@ -209,17 +209,18 @@ and a setter.
 
         html += '</div>';
 
+        // COMMENTED BECAUSE OF THE NO NEED of the right side
         // Editor-right
-        html += '<div id="wcp-editor-right">';
-        html += '   <div id="wcp-editor-list-title">'
-        html += '       <a class="" style="color:white; text-decoration:none"  href="#collapse-edition" role="button" aria-expanded="false" aria-controls="collapse-edition">'
-        html += '           Points d\'intérêts';
-        html += '       </a>';
-        html += '   </div>';
-        // Performe the collapse
-        html += '   <div  id="collapse-edition" style="margin:0 padding: 0;">'
-        html += '   </div>';
-        html += '</div>';
+        // html += '<div id="wcp-editor-right">';
+        // html += '   <div id="wcp-editor-list-title">'
+        // html += '       <a class="" style="color:white; text-decoration:none"  href="#collapse-edition" role="button" aria-expanded="false" aria-controls="collapse-edition">'
+        // html += '           Points d\'intérêts';
+        // html += '       </a>';
+        // html += '   </div>';
+        // // Performe the collapse
+        // html += '   <div  id="collapse-edition" style="margin:0 padding: 0;">'
+        // html += '   </div>';
+        // html += '</div>';
 
         this.host.html(html);
 
@@ -972,7 +973,9 @@ and a setter.
         $('#wcp-editor-list').scrollTop(s);
 
 
-        
+        //ADD A CLASS TO AN ID, Important for the display in the preview mode
+		$("#wcp-editor-form-control-button-lunch-editer").addClass("wcp-editor-control-button-launch");
+		console.log('ara tchuuuuuuuuuuuuuuuuuuuuuuuuu');
         
     };
     WCPEditor.prototype.selectListItem = function(listItemId) {

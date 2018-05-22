@@ -381,6 +381,55 @@
         name: 'Shape Settings',
         controlGroups: [
             {
+                groupName: 'Action',
+                groupTitle: 'Action',
+                groupIcon: 'fa fa-edit',
+                controls: [
+                    {
+                        type: 'button',
+                        name: 'button-lunch-editer',
+                        title: 'Editer le contenu',
+                        options: { event_name: 'button-launch-content-builder-clicked' },
+                        value: undefined
+                    },
+                    // {
+                    //     type: 'button',
+                    //     name: 'rename',
+                    //     title: 'Renommer',
+                    //     options: { event_name: 'button-rename-the-style-clicked' },
+                    //     value: undefined
+                    // },
+                    {
+                        type: 'button',
+                        name: 'copy',
+                        title: 'Copier le style',
+                        options: { event_name: 'button-copy-the-style-clicked' },
+                        value: undefined
+                    },
+                    {
+                        type: 'button',
+                        name: 'paste',
+                        title: 'Coller le style',
+                        options: { event_name: 'button-paste-the-style-clicked' },
+                        value: undefined
+                    },
+                    {
+                        type: 'button',
+                        name: 'duplicate',
+                        title: 'Dupliquer le point',
+                        options: { event_name: 'button-duplicate-the-style-clicked' },
+                        value: undefined
+                    },
+                    {
+                        type: 'button',
+                        name: 'delete',
+                        title: 'Supprimer le point d\'intérêt',
+                        options: { event_name: 'button-delete-the-style-clicked' },
+                        value: undefined
+                    },
+                ]
+            },
+            {
                 groupName: 'general',
                 groupTitle: 'Taille',
                 groupIcon: 'fa fa-expand-arrows-alt',
@@ -549,7 +598,7 @@
             },
             {
                 groupName: 'default_style',
-                groupTitle: 'Style de l\'icône',
+                groupTitle: 'Style',
                 groupIcon: 'fa fa-paint-brush',
                 controls: [
                     {

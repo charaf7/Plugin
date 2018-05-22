@@ -463,7 +463,7 @@ Colors:
     line-height: 40px;
     padding-left: 20px;
     color: white;
-    background: #FF770D;
+    background: #FF6631;
 }
 #wcp-editor-main-tab-contents .wcp-editor-main-tab-content .wcp-editor-main-tab-content-title:before {
     display: block;
@@ -695,7 +695,7 @@ Colors:
     line-height: 40px;
     padding-left: 20px;
     color: white;
-    background: #ff770d;
+    background: #ff6631;
 }
 #wcp-editor-list-title:before {
     display: block;
@@ -1375,4 +1375,85 @@ Colors:
     cursor: pointer;
     width: 45px !important;
     height: 45px !important;
+}
+
+/* PLACING THE ICONS IN THE SPOTS ACTIONS : EDIT - RENAME - COPY - PASTE - DUPLICATE - DETELE */
+#wcp-editor-form-control-button-lunch-editer div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f044";
+    padding: 7px;
+}
+#wcp-editor-form-control-rename div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f303";
+    padding: 7px;
+}
+#wcp-editor-form-control-copy div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c5";
+    padding: 7px;
+}
+#wcp-editor-form-control-paste div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0ea";
+    padding: 7px;
+}
+#wcp-editor-form-control-duplicate div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f24d";
+    padding: 7px;
+}
+#wcp-editor-form-control-delete div:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f2ed";
+    padding: 7px;
+}
+/*STYLE FOR THOSE ELEMENTS, ITS BEAUTIFUL OKEY ? */
+#wcp-editor-form-control-button-lunch-editer div {
+    width: 100%;
+    height: 85px;
+    background: #ff6631;
+    line-height: 85px;
+}
+#wcp-editor-form-control-copy div {
+    width: 100%;
+    float: left;
+    background: #783b6b;
+}
+#wcp-editor-form-control-paste div {
+    width: 100%;
+    float: left; 
+    background: #783b6b;
+}
+#wcp-editor-form-control-duplicate div {
+    width: 100%;
+    float: left;
+    background: #783b6b;
+}
+#wcp-editor-form-control-delete div {
+    width: 100%;
+    float: left;
+    background: #e03c1c;
+}
+#wcp-editor-form-control-duplicate{
+    margin-top: 75px;
+}
+#wcp-editor-form-control-button-lunch{
+    margin-bottom: 20px;
+}
+#wcp-editor-form-control-delete{
+    margin-top: 147px;
+}
+/* ICON FOR importer une image */
+#firstImage label:before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f093";
+    padding: 7px;
 }

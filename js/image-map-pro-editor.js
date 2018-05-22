@@ -797,7 +797,7 @@
 			
 			$.wcpEditorPresentModal({
 				name: 'confirm-delete-shape',
-				title: 'Confirm Delete',
+				title: 'Confirmer la suppression',
 				buttons: [
 					{
 						name: 'cancel',
@@ -1944,6 +1944,33 @@
 			}, 200);
 		
 		});
+		
+		// event for copy the style
+		$(document).off('button-copy-the-style-clicked');
+		$(document).on('button-copy-the-style-clicked', function() {
+			$.wcpEditorEventListItemTitleButtonPressed('copy');
+		});
+		// event for past the style
+		$(document).off('button-paste-the-style-clicked');
+		$(document).on('button-paste-the-style-clicked', function() {
+			$.wcpEditorEventListItemTitleButtonPressed('paste');
+		});
+		// event for duplicate a spot
+		$(document).off('button-duplicate-the-style-clicked');
+		$(document).on('button-duplicate-the-style-clicked', function() {
+			$.wcpEditorEventListItemTitleButtonPressed('duplicate');
+		});
+		// event for delete a spot
+		$(document).off('button-delete-the-style-clicked');
+		$(document).on('button-delete-the-style-clicked', function() {
+			$.wcpEditorEventListItemTitleButtonPressed('delete');
+		});
+		// event for rename a spot
+		$(document).off('button-rename-the-style-clicked');
+		$(document).on('button-rename-the-style-clicked', function() {
+			$.wcpEditorEventListItemTitleButtonPressed('rename');
+		});
+		
 		$(document).on('click','#extra-button-desktop',function(){
 			settings.general.width = self.canvasImage.naturalWidth;
 			settings.general.height = self.canvasImage.naturalHeight;
