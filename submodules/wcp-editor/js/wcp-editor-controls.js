@@ -1043,7 +1043,7 @@ To be rewritten
             if ($.wcpWPMedia) {
                 $.wcpWPMedia(inputSelector, buttonSelector, function() {
                     self.valueChanged();
-                    
+                    editor.zoomReset();
                 });
             }
 

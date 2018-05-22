@@ -180,7 +180,7 @@ and a setter.
                 icon = '<i class="'+ b.icon +'" aria-hidden="true"></i>';
             }
 
-            html += '       <div class="wcp-editor-toolbar-button" data-wcp-editor-toolbar-button-name="'+ b.name +'" data-wcp-tooltip="'+ b.title +'" data-wcp-tooltip-position="right" data-wcp-editor-toolbar-button-kind="'+ b.kind +'">';
+            html += '       <div class="wcp-editor-toolbar-button" data-wcp-editor-toolbar-button-name="'+ b.name +'" data-wcp-tooltip="'+ b.title +'" data-wcp-tooltip-position="left" data-wcp-editor-toolbar-button-kind="'+ b.kind +'">';
             html += '           <div class="wcp-editor-toolbar-button-icon">'+ icon +'</div>';
             html += '           <div class="wcp-editor-toolbar-button-title">'+ b.title +'</div>';
             html += '       </div>';
@@ -1141,7 +1141,7 @@ and a setter.
         this.loadingScreenTimeout = setTimeout(function() {
             console.log("SCREEMM");
             self.loadingScreen.hide();
-        }, 250);
+        }, 250); 
     }
     WCPEditor.prototype.hideLoadingScreenWithText = function(text, error, manualClose) {
         var self = this;
