@@ -825,8 +825,8 @@ The usage scenario is the following (for now):
     Container.prototype.appendEditorControls = function() {
         var html = '';
         html += '     <div class="sq-container-move"></div>';
-        html += '     <div class="sq-container-delete"><i class="fa fa-times" aria-hidden="true"></i></div>';
-        html += '     <div class="sq-container-confirm-delete" data-container-id="'+ this.id +'">Delete</div>';
+        //html += '     <div class="sq-container-delete"><i class="fa fa-times" aria-hidden="true"></i></div>';
+        //html += '     <div class="sq-container-confirm-delete" data-container-id="'+ this.id +'">Delete</div>';
 
         $('#' + this.id).append(html);
     }
