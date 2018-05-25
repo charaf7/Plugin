@@ -95,9 +95,9 @@
         else{
             html += '<div id="imp-editor-shapes-container">';
         }
-        
+        html += '<div id="img-editor-image-area">';
         html += '<img id="imp-editor-image" src="'+ settings.image.url +'">';
-
+        html += '</div>';
 
         style_ = '';
         for (var i=0; i<settings.spots.length; i++) {

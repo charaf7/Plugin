@@ -483,6 +483,7 @@ and a setter.
             var saveID = $(this).parent().data('wcp-editor-save-list-item-id');
             $.wcpEditorEventLoadSaveWithID(saveID);
             self.closeModal();
+            $("#firstImage").hide();
         });
         // Load modal delete button
         $(document).off('click', '.wcp-editor-save-list-item-delete-button');
@@ -742,23 +743,23 @@ and a setter.
     WCPEditor.prototype.presentCreateNewModal = function() {
         var modalBody = '';
         modalBody += '<div class="wcp-editor-form-control">';
-        modalBody += '  <label for="wcp-editor-input-create-new">Name: </label>';
+        modalBody += '  <label for="wcp-editor-input-create-new">Nom : </label>';
         modalBody += '  <input type="text" id="wcp-editor-input-create-new">';
         modalBody += '  <div id="wcp-editor-create-new-error">Please enter a name!</div>';
         modalBody += '</div>';
 
         var modalOptions = {
             name: 'create_new',
-            title: 'Create New',
+            title: 'Créer un nouveau projet',
             buttons: [
                 {
                     name: 'cancel',
-                    title: 'Cancel',
+                    title: 'Annuler',
                     class: '',
                 },
                 {
                     name: 'create',
-                    title: 'Create',
+                    title: 'Créer',
                     class: 'primary',
                     id: 'wcp-editor-button-create-new-instance'
                 },
@@ -774,7 +775,7 @@ and a setter.
     WCPEditor.prototype.presentLoadModal = function() {
         var self = this;
 
-        this.presentLoadingScreenWithText('Loading Saves...');
+        this.presentLoadingScreenWithText('Chargement...');
 
         $.wcpEditorGetSaves(function(savesList) {
             var modalBody = '';
@@ -788,11 +789,11 @@ and a setter.
 
             var modalOptions = {
                 name: 'load',
-                title: 'Load',
+                title: 'Charger',
                 buttons: [
                     {
                         name: 'cancel',
-                        title: 'Cancel',
+                        title: 'Annuler',
                         class: '',
                     },
                 ],
@@ -806,22 +807,22 @@ and a setter.
     WCPEditor.prototype.presentDeleteSaveConfirmationModal = function() {
         var modalOptions = {
             name: 'confirmation',
-            title: 'Delete Save',
+            title: 'Supprimer',
             buttons: [
                 {
                     name: 'cancel',
-                    title: 'Cancel',
+                    title: 'Annuler',
                     class: '',
                     id: 'wcp-editor-cancel-delete-save'
                 },
                 {
                     name: 'delete',
-                    title: 'Delete',
+                    title: 'Supprimer',
                     class: 'danger',
                     id: 'wcp-editor-confirm-delete-save'
                 },
             ],
-            body: 'Are you sure you want to permanently delete this save?'
+            body: 'Voulez-vous vraiment supprimer le projet?'
         };
 
         this.presentModal(modalOptions);

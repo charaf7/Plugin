@@ -369,7 +369,7 @@
 	}
 	// $.getTitlefromFiel = function()
 	$.getImagefromField = function(input_file){
-		$.wcpEditorPresentLoadingScreen('Loading Image...');
+		$.wcpEditorPresentLoadingScreen('Chargement de l\'image...');
 		var og_width;
 		var og_height;
 		var input = input_file;
@@ -449,7 +449,7 @@
 				loadImage(editor.canvasImage, function() {
 					// Image is loading
 					// Show loader
-					$.wcpEditorPresentLoadingScreen('Loading Image...');
+					$.wcpEditorPresentLoadingScreen('Chargement de l\'image...');
 				}, function() {
 					// Image has loaded
 					// init canvas events
@@ -471,7 +471,7 @@
 					editor.redraw();
 					editor.addAction();
 				}, function() {
-					$.wcpEditorHideLoadingScreenWithMessage('Error Loading Image!', true, false);
+					$.wcpEditorHideLoadingScreenWithMessage('Erreur du chargement de l\'image', true, false);
 				});
 			} else {
 				settings.general.name = m.general.image_map_name.trim();
@@ -1721,9 +1721,10 @@
 		// Set the size of the canvas
 
 		$('#wcp-editor-canvas').css({
-			width: $('#imp-editor-image').width() + 4,
-			height: self.canvasHeight,
-			
+			//width: $('#imp-editor-image').width() + 4,
+			//height: self.canvasHeight,
+			width: "25vw",
+			height: "85vh",
 			// background_color: self.ge
 		});
 		console.log(self.canvasWidth,self.canvasHeight);
@@ -1746,8 +1747,10 @@
 
 			$(".wcp-general-settings").children().hide();
 			$('#imp-editor-image').css({
-				//width: self.canvasWidth,
-				height: self.canvasHeight - 4,
+				width: '100%',
+				height: '100%',
+				//maxWidth: self.canvasWidth,
+				//maxHeight: self.canvasHeight -4,
 			});
 			$.wcpEditorSetPreviewModeOff();
 
@@ -1789,7 +1792,7 @@
 	Editor.prototype.getCanvasDefaultSize = function() {
 		var size = { w: 0, h: 0 };
 
-		/*THIS CODE WAS USED SO THE IMAGE CAN FIT THE SCREEN OF THE CENTER SIDE, NOT THE DESIRE FOR CULTURMOOV PLUGIN, SO ITS COMMENTED TO
+		/*COMMENTED : THIS CODE WAS USED SO THE IMAGE CAN FIT THE SCREEN OF THE CENTER SIDE, NOT THE DESIRE FOR CULTURMOOV PLUGIN, SO ITS COMMENTED TO
 		  TAKE THE ORIGINAL SIZE IN THE FRAME OF THE CANVAS USING canvasImage.naturalWidth & Height, GOOD LUCK IN WHATEVER YOU ARE 
 		  DOING HERE, Charaf*/
 
@@ -1819,8 +1822,8 @@
 		//	size.h = settings.general.height;
 		//}	
 				
-		 size.w = $('#wcp-editor-center').width() - 80;
-		 size.h = $('#wcp-editor-center').height() - 80;
+		 size.w = $('#wcp-editor-center').width() - 625;
+		 size.h = $('#wcp-editor-center').height() - 110;
 			
 		
 
@@ -2179,7 +2182,6 @@
 		// === Zoom in active?
 		if (settings.editor.tool == EDITOR_TOOL_ZOOM_IN && $(e.target).attr('id') != 'wcp-editor-center') {
 			self.zoomIn(e);
-
 			// Deselect shapes
 			this.shouldDeselectShape = true;
 
@@ -2189,7 +2191,6 @@
 		// === Zoom out active?
 		if (settings.editor.tool == EDITOR_TOOL_ZOOM_OUT && $(e.target).attr('id') != 'wcp-editor-center') {
 			self.zoomOut(e);
-
 			// Deselect shapes
 			this.shouldDeselectShape = true;
 
@@ -3244,7 +3245,7 @@
 				fy = self.iy;
 			} else {
 				// Assume that the focal point is at the center of #wcp-editor-center
-				var wcpEditorCenter = $('#wcp-editor-center');
+				var wcpEditorCenter = $('#img-editor-image-area');
 
 				// Center of wcp-editor-center, relative to screen
 				var wcpEditorCenterCenterX = wcpEditorCenter.offset().left + wcpEditorCenter.width()/2;

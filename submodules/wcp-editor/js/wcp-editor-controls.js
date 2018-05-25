@@ -1018,7 +1018,7 @@ To be rewritten
 
             $(document).on('change', inputSelector, function() {
                 self.valueChanged();
-                
+                $("#firstImage").hide();
             });
         }
     });

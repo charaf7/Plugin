@@ -974,7 +974,7 @@
         name: 'Visite',
         welcomeScreen: {
             title: 'Bienvenue!',
-            text: 'Ceci est une visite guidée pour vous aider à démarrer rapidement avec CulturMoov Studio. <br> Cliquez sur le bouton ci-dessous pour commencer!',
+            text: 'Ceci est une visite guidée pour vous aider à démarrer rapidement avec CulturMoov Plugin. <br> Cliquez sur le bouton ci-dessous pour commencer!',
             startButtonTitle: 'Faites le tour',
             cancelButtonTitle: 'Ou passez ce guide',
         },

@@ -825,6 +825,7 @@ The usage scenario is the following (for now):
     Container.prototype.appendEditorControls = function() {
         var html = '';
         html += '     <div class="sq-container-move"></div>';
+        //COMMENTED THE DELETE BLOC OPTION, NO NEED
         //html += '     <div class="sq-container-delete"><i class="fa fa-times" aria-hidden="true"></i></div>';
         //html += '     <div class="sq-container-confirm-delete" data-container-id="'+ this.id +'">Delete</div>';
 
