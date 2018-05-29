@@ -1281,8 +1281,13 @@
 		this.shiftKeyDown = false;
 		this.spaceKeyDown = false;
 		this.commandKeyDown = false;
-
+		this.deleteKeyDown = false;
 		this.draggingCanvas = false;
+		this.enterKeyDown = false;
+		this.escapeKeyDown = false;
+		this.tabKeyDown = false;
+
+		this.modal = undefined;
 
 		// vars
 		this.allSpots = new Array();
@@ -1365,6 +1370,12 @@
 
 		// Set the canvas object type
 		$('#wcp-editor-canvas').attr('data-editor-object-type', '0');
+
+		//close the settings place
+		$(".wcp-general-settings").children().hide();
+
+		//show the canvas
+		$('#wcp-editor-canvas').show();
 		
 		// Reset vars
 		this.allSpots = new Array();
@@ -1373,7 +1384,7 @@
 		this.shapesFormSpotIndex = undefined;
 
 		this.parseSettings();
-
+		
 		
 		// If there is an image URL entered, show the loader and start redraw
 		if (settings.image.url && settings.image.url.length > 0) {
@@ -1426,40 +1437,7 @@
 		this.updateImageMapForm();
 
 		
-		// parametres generaux - new place
-		$('#wcp-editor-title-proj').click(function(){
-			if( $(".wcp-general-settings").hasClass("showParam")){
-
-				$(".wcp-general-settings").removeClass("showParam");
-				$('#wcp-editor-title-proj').animate({top  :'0px'});
-				$('#wcp-editor-canvas').css('display','block');
-				$(".wcp-general-settings").children().hide();
-				settings.editor.previewMode = 0;
-				$.wcpEditorOpenMainTabWithName('Image Map');
-				
-			}
-			else{
-				$(".wcp-general-settings").addClass("showParam");
-				$('#wcp-editor-title-proj').animate({top  :'360px'});
-				settings.editor.previewMode = 1;
-				var clonedSettings = $.extend(true, {}, settings);
-				clonedSettings.fullscreen.start_in_fullscreen_mode = false;
-				$('#wcp-editor-canvas').imageMapPro(clonedSettings);
-				$(".wcp-general-settings").children().show();
-				$.wcpEditorOpenMainTabWithName('Image Map');
-			}
-		});
-		$('#specialCliquableSetting').click(function(){
-			if( $(".wcp-general-settings").hasClass("showParam")){
-				$(".wcp-general-settings").removeClass("showParam");
-				$('#wcp-editor-title-proj').animate({top  :'0px'});
-				$('#wcp-editor-canvas').css('display','block');
-				$(".wcp-general-settings").children().hide();
-				settings.editor.previewMode = 0;
-				$.wcpEditorOpenMainTabWithName('Image Map');
-				
-			}
-		});
+		
 	}
 	Editor.prototype.parseSettings = function() {
 		// This prototype is Weard, why need to update old json with a new, when we create new so fast with new plugin ??? Don't understand..
@@ -1725,6 +1703,7 @@
 			//height: self.canvasHeight,
 			width: "25vw",
 			height: "85vh",
+			display : "block",
 			// background_color: self.ge
 		});
 		console.log(self.canvasWidth,self.canvasHeight);
@@ -1745,7 +1724,11 @@
 			$('#wcp-editor-phrase-accroche').html($.image_map_pro_editor_content_phase());
 			$('#wcp-editor-infosplus').html($.image_map_pro_editor_content_infosplus());
 
-			$(".wcp-general-settings").children().hide();
+			if( $('[data-wcp-main-tab-content-name="Image Map"]').is(":visible") ){
+				$('#wcp-editor-canvas').css('display','none');
+				console.log("uuuuuuuuuuuuuuuuuuuh");
+			}
+			//$(".wcp-general-settings").children().hide();
 			$('#imp-editor-image').css({
 				width: '100%',
 				height: '100%',
@@ -2182,6 +2165,7 @@
 		// === Zoom in active?
 		if (settings.editor.tool == EDITOR_TOOL_ZOOM_IN && $(e.target).attr('id') != 'wcp-editor-center') {
 			self.zoomIn(e);
+
 			// Deselect shapes
 			this.shouldDeselectShape = true;
 
@@ -2191,6 +2175,7 @@
 		// === Zoom out active?
 		if (settings.editor.tool == EDITOR_TOOL_ZOOM_OUT && $(e.target).attr('id') != 'wcp-editor-center') {
 			self.zoomOut(e);
+
 			// Deselect shapes
 			this.shouldDeselectShape = true;
 
@@ -2898,7 +2883,52 @@
 	Editor.prototype.handleKeyDown = function(e) {
 		// console.log('keydown: ' + e.keyCode);
 		var returnValue = undefined;
+		m = $("#wcp-editor-modal");
 
+		//ENTER
+		if( e.keyCode == 13 && (m.length == 0 || m.css('display') == 'none') ){
+			this.enterKeyDown = true;
+			this.launchTooltipContentBuilder();
+			setTimeout(() => {
+				var button_editor = $("[data-button-value=content-builder]");
+				button_editor[0].click();
+				this.launchTooltipContentBuilder();
+			}, 200);
+
+			returnValue = false;
+		}
+		//DELETE
+		if(e.keyCode == 46){
+			this.deleteKeyDown = true;
+			$.wcpEditorEventListItemTitleButtonPressed('delete');
+
+			returnValue = false;
+		}
+		//ESCAPE
+		if(e.keyCode == 27 && (m.length == 0 || m.css('display') == 'none')){
+			this.escapeKeyDown = true;
+			$('#imp-editor-tooltip-content-builder-wrap').removeClass('imp-visible');
+
+			setTimeout(function() {
+				$('#imp-editor-tooltip-content-builder-wrap').hide();
+			}, 250);
+			$('.squareEditorTextarea').summernote('destroy');
+			this.doneEditingTooltip();
+			$.squaresHideEditorWindow();
+
+			returnValue = false;
+		}
+		// Tab 
+		if (e.keyCode == 9) {
+			this.tabKeyDown = true;
+			if (parseInt(settings.editor.previewMode, 10) == 1) {
+				$.wcpEditorEventExitedPreviewMode();
+			}
+			else
+				$.wcpEditorEventEnteredPreviewMode();
+
+			returnValue = false;
+		}	
 		// Space
 		if (e.keyCode == 32) {
 			this.spaceKeyDown = true;
@@ -2942,7 +2972,74 @@
 				returnValue = true;
 			}
 		}
+		// CTRL + C
+		if (e.keyCode == 67) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventListItemTitleButtonPressed('copy');
+				returnValue = true;
+			}
+		}
+		// CTRL + v
+		if (e.keyCode == 86) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventListItemTitleButtonPressed('paste');
+				returnValue = true;
+			}
+		}
+		// CTRL + D (duplicate)
+		if (e.keyCode == 68) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventListItemTitleButtonPressed('duplicate');
+				returnValue = true;
+			}
+		}
+		// CTRL + S (save)
+		if (e.keyCode == 83) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventSaveButtonPressed();
+				returnValue = true;
+			}
+		}
+		// CTRL + Z (undo)
+		if (e.keyCode == 90) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventUndoButtonPressed();
+				returnValue = true;
+			}
+		}
+		// CTRL + Y (redo)
+		if (e.keyCode == 89) {
+			if (this.ctrlKeyDown || this.commandKeyDown) {
+				$.wcpEditorEventRedoButtonPressed();
+				returnValue = true;
+			}
+		}
+		
+		// modal keyboard
+		if(m.length > 0 && m.css('display') != 'none'){
+			//escape
+			if(e.keyCode == 27){
+				this.escapeKeyDown = true;
+				$('#wcp-editor-modal').removeClass('wcp-editor-modal-visible');
+				this.modalTimeout = setTimeout(function() {
+					$('#wcp-editor-modal').hide();
+				}, 330);	
 
+				returnValue = false;
+			}
+			//enter
+			if(e.keyCode == 13){
+				this.enterKeyDown = true;
+				//delete modal
+				if ($('.wcp-editor-modal-button-danger').length > 0)
+					$('.wcp-editor-modal-button-danger').click();
+				//new and load modal
+				if ($('.wcp-editor-modal-button-primary').length > 0)
+					$('.wcp-editor-modal-button-primary').click();
+				returnValue = false;
+			}
+		}
+		
 		return returnValue;
 	}
 	Editor.prototype.handleKeyUp = function(e) {
@@ -2950,6 +3047,26 @@
 
 		// console.log('keyup: ' + e.keyCode);
 		var returnValue = false;
+		//ENTER
+		if(e.keyCode == 13){
+			self.enterKeyDown = false;
+			returnValue = true;
+		}
+		//ESCAPE
+		if(e.keyCode == 27){
+			self.escapeKeyDown = false;
+			returnValue = true;
+		}
+		//TAB
+		if(e.keyCode == 9){
+			self.tabKeyDown = false;
+			returnValue = true;
+		}
+		//DELETE
+		if(e.keyCode == 46){
+			self.deleteKeyDown = false;
+			returnValue = true;
+		}
 
 		// Space
 		if (e.keyCode == 32) {
@@ -3245,7 +3362,7 @@
 				fy = self.iy;
 			} else {
 				// Assume that the focal point is at the center of #wcp-editor-center
-				var wcpEditorCenter = $('#img-editor-image-area');
+				var wcpEditorCenter = $('#wcp-editor-center');
 
 				// Center of wcp-editor-center, relative to screen
 				var wcpEditorCenterCenterX = wcpEditorCenter.offset().left + wcpEditorCenter.width()/2;

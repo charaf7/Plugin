@@ -236,7 +236,7 @@
                     {
                         type: 'switch',
                         name: 'phase_popover_exist',
-                        title: 'Activer la prhase d\'accroche',
+                        title: 'Activer la phrase d\'accroche',
                         value: $.imageMapProDefaultSettings.phase.phase_popover_exist
                     },
                     {
@@ -1163,26 +1163,26 @@
             id:'extra-button-export'
         }
         ,
-        {
-            name: 'mobile',
-            icon: 'fa fa-mobile',
-            title: 'Mobile',
-            id:'extra-button-mobile'
-        }
-        ,
-        {
-            name: 'tablet',
-            icon: 'fa fa-tablet',
-            title: 'Tablette',
-            id:'extra-button-tablet'
-        }
-        ,
-        {
-            name: 'desktop',
-            icon: 'fa fa-desktop',
-            title: 'Originale',
-            id:'extra-button-desktop'
-        }
+        // {
+        //     name: 'mobile',
+        //     icon: 'fa fa-mobile',
+        //     title: 'Mobile',
+        //     id:'extra-button-mobile'
+        // }
+        // ,
+        // {
+        //     name: 'tablet',
+        //     icon: 'fa fa-tablet',
+        //     title: 'Tablette',
+        //     id:'extra-button-tablet'
+        // }
+        // ,
+        // {
+        //     name: 'desktop',
+        //     icon: 'fa fa-desktop',
+        //     title: 'Originale',
+        //     id:'extra-button-desktop'
+        // }
     ];
     
     $.WCPEditorSettings = {
@@ -1240,16 +1240,16 @@
                     icon: 'fa fa-mouse-pointer',
                     title: 'Sélectionner une icône'
                 },
-                {
-                    name: 'zoom-in',
-                    icon: 'fa fa-search-plus',
-                    title: 'Zoom Avant (CTRL +)',
-                },
-                {
-                    name: 'zoom-out',
-                    icon: 'fa fa-search-minus',
-                    title: 'Zoom Arrière (CTRL -)'
-                },
+                // {
+                //     name: 'zoom-in',
+                //     icon: 'fa fa-search-plus',
+                //     title: 'Zoom Avant (CTRL +)',
+                // },
+                // {
+                //     name: 'zoom-out',
+                //     icon: 'fa fa-search-minus',
+                //     title: 'Zoom Arrière (CTRL -)'
+                // },
                 {
                     name: 'drag',
                     icon: 'fa fa-hand-paper',

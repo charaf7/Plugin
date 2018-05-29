@@ -124,7 +124,7 @@ Colors:
     text-align: center;
     width: 47%;
     margin: auto;
-    left: 170px;
+    left: 343px;
     bottom: 0px;
 }
 #wcp-editor-phrase-accroche-title{
@@ -310,6 +310,7 @@ Colors:
     border: 2px dashed #b7b7b7;
     z-index: 0;
     margin-top: 32px;
+    display: block;
 }
 #wcp-editor-center #wcp-editor-canvas.wcp-editor-canvas-fill {
     position: absolute;

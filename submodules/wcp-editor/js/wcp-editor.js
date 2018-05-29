@@ -232,6 +232,43 @@ and a setter.
 
         this.events();
 
+        // parametres generaux - new place
+		$('#wcp-editor-title-proj').click(function(){
+			if( $(".wcp-general-settings").hasClass("showParam")){
+
+				$(".wcp-general-settings").removeClass("showParam");
+				$('#wcp-editor-title-proj').animate({top  :'0px'});
+                $('#wcp-editor-canvas').css('display','block');
+                console.log($('#wcp-editor-canvas').css('display'));
+				$(".wcp-general-settings").children().hide();
+				//settings.editor.previewMode = 0;
+				$.wcpEditorOpenMainTabWithName('Image Map');
+				
+			}
+			else{
+				$(".wcp-general-settings").addClass("showParam");
+				$('#wcp-editor-title-proj').animate({top  :'360px'});
+				$('#wcp-editor-canvas').css('display','none');
+				//settings.editor.previewMode = 1;
+				//var clonedSettings = $.extend(true, {}, settings);
+				//clonedSettings.fullscreen.start_in_fullscreen_mode = false;
+				//$('#wcp-editor-canvas').imageMapPro(clonedSettings);
+				$(".wcp-general-settings").children().show();
+				$.wcpEditorOpenMainTabWithName('Image Map');
+			}
+		});
+		$('#specialCliquableSetting').click(function(){
+			if( $(".wcp-general-settings").hasClass("showParam")){
+				$(".wcp-general-settings").removeClass("showParam");
+				$('#wcp-editor-title-proj').animate({top  :'0px'});
+				$('#wcp-editor-canvas').css('display','block');
+				$(".wcp-general-settings").children().hide();
+				settings.editor.previewMode = 0;
+				$.wcpEditorOpenMainTabWithName('Image Map');
+				
+			}
+		});
+
     };
     WCPEditor.prototype.events = function () {
         var self = this;
@@ -1212,7 +1249,7 @@ and a setter.
         $("#wcp-editor-title-proj").animate({height : '40px',});
         $("#wcp-editor-title-proj").children().show();
         //center accroche
-        $("#wcp-editor-phrase-accroche").css({left : '170px',});
+        $("#wcp-editor-phrase-accroche").css({left : '343px',});
         //infoplus
         $("#wcp-editor-infosplus").css({width : '100%', bottom : '60px'}); 
 
