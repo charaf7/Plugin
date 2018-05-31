@@ -304,19 +304,19 @@
                     {
                         type: 'color',
                         name: 'infosplus_fond_color',
-                        title: 'Couleur du Fond',
+                        title: 'Couleur de fond',
                         value: $.imageMapProDefaultSettings.infosplus.infosplus_fond_color,
                     },
                     {
                         type: 'color',
                         name: 'infosplus_contour_color',
-                        title: 'Couleur du contours',
+                        title: 'Couleur des contours',
                         value: $.imageMapProDefaultSettings.infosplus.infosplus_contour_color,
                     },
                     {
                         type: 'color',
                         name: 'infosplus_text_color',
-                        title: 'Couleur du Texte',
+                        title: 'Couleur du texte',
                         value: $.imageMapProDefaultSettings.general.infosplus_text_color,
                     }
                 ]
@@ -416,7 +416,7 @@
                     {
                         type: 'button',
                         name: 'duplicate',
-                        title: 'Dupliquer le point',
+                        title: 'Dupliquer l\'icône',
                         options: { event_name: 'button-duplicate-the-style-clicked' },
                         value: undefined
                     },
@@ -532,12 +532,7 @@
                 groupTitle: 'L\'icône',
                 groupIcon: 'fa fa-map-marker',
                 controls: [
-                    {
-                        type: 'switch',
-                        name: 'use_icon',
-                        title: 'Utiliser l\'icône',
-                        value: $.imageMapProDefaultSpotSettings.default_style.use_icon
-                    },
+                    
                     {
                         type: 'button group',
                         name: 'icon_type',
@@ -590,8 +585,14 @@
                     },
                     {
                         type: 'switch',
+                        name: 'use_icon',
+                        title: 'Utiliser le motif',
+                        value: $.imageMapProDefaultSpotSettings.default_style.use_icon
+                    },
+                    {
+                        type: 'switch',
                         name: 'use_icon_style',
-                        title: 'Styliser l\'icône',
+                        title: 'Utiliser le fond',
                         value: $.imageMapProDefaultSpotSettings.default_style.use_icon_style
                     },
                 ]
@@ -617,12 +618,12 @@
                     {
                         type: 'select',
                         name: 'border_radius',
-                        title: 'Bordure arrondi',
+                        title: 'Forme',
                         options: [
-                            { value: "0", title: "aucune"},
-                            { value: "10", title: "légère"},
-                            { value: "20", title: "moyenne"},
-                            { value: "50", title: "grande"}
+                            { value: "0", title: "Carré"},
+                            { value: "10", title: "Carré-arrondi"},
+                            //{ value: "20", title: "moyenne"},
+                            { value: "50", title: "Rond"}
                         ],
                         value: $.imageMapProDefaultSpotSettings.default_style.border_radius
                     },
@@ -709,23 +710,23 @@
                         options: { min: 0, max: 20, type: 'int' },
                         value: $.imageMapProDefaultSpotSettings.default_style.stroke_width
                     },
-                    {
-                        type: 'text',
-                        name: 'stroke_dasharray',
-                        title: 'Stroke Dasharray',
-                        value: $.imageMapProDefaultSpotSettings.default_style.stroke_dasharray
-                    },
-                    {
-                        type: 'select',
-                        name: 'stroke_linecap',
-                        title: 'Stroke Linecap',
-                        options: [
-                            { value: 'butt', title: 'Butt' },
-                            { value: 'round', title: 'Round' },
-                            { value: 'square', title: 'Square' },
-                        ],
-                        value: $.imageMapProDefaultSpotSettings.default_style.stroke_linecap
-                    },
+                    // {
+                    //     type: 'text',
+                    //     name: 'stroke_dasharray',
+                    //     title: 'Stroke Dasharray',
+                    //     value: $.imageMapProDefaultSpotSettings.default_style.stroke_dasharray
+                    // },
+                    // {
+                    //     type: 'select',
+                    //     name: 'stroke_linecap',
+                    //     title: 'Stroke Linecap',
+                    //     options: [
+                    //         { value: 'butt', title: 'Butt' },
+                    //         { value: 'round', title: 'Round' },
+                    //         { value: 'square', title: 'Square' },
+                    //     ],
+                    //     value: $.imageMapProDefaultSpotSettings.default_style.stroke_linecap
+                    // },
                 ]
             },
             {

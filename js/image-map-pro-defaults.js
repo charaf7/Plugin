@@ -44,7 +44,7 @@
 			icon_type: 'library', // or 'custom'
 			icon_svg_path: 'M111.575,5.462l34.489,69.827l77.087,11.226l-55.778,54.371l13.17,76.784l-68.958-36.267      l-68.958,36.267l13.18-76.784L0,86.525l77.096-11.226L111.575,5.462',
 			icon_svg_viewbox: '0 0 223.151 223.151',
-			icon_fill: '#6A2943',
+			icon_fill: '#fff',
 			icon_url: 'Coller l\'URL d\'une icône ici',
 			icon_is_pin: 1,
 			icon_shadow: 0,

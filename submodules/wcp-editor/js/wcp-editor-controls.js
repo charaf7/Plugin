@@ -461,10 +461,10 @@ To be rewritten
             $(document).on('click', '#' + this.elementID, function() {
                 $(this).toggleClass('active');
                 self.valueChanged();
-                $("#firstImage").hide();
-                $(".wcp-general-settings").children().hide();
-                $(".wcp-general-settings").removeClass("showParam");
-                $('#wcp-editor-title-proj').animate({top  :'0px'});
+                // $("#firstImage").hide();
+                // $(".wcp-general-settings").children().hide();
+                // $(".wcp-general-settings").removeClass("showParam");
+                // $('#wcp-editor-title-proj').animate({top  :'0px'});
             });
             $(document).on('click', '#' + this.elementID + '-label', function() {
                 $('#' + self.elementID).toggleClass('active');

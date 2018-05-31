@@ -430,6 +430,8 @@
 			},100);
 		} else {
 			$.wcpEditorHideLoadingScreenWithMessage('Erreur lors du chargement de l\'image!', true, false);
+			$("#firstImage").show();
+			console.log('aywaa');
 		}
 	};
 
@@ -1287,6 +1289,15 @@
 		this.escapeKeyDown = false;
 		this.tabKeyDown = false;
 
+		this.iKeyDown = false;
+		this.vKeyDown = false;
+		this.rKeyDown = false;
+		this.oKeyDown = false;
+		this.lKeyDown = false;
+		this.gKeyDown = false;
+		this.pKeyDown = false;
+		this.hKeyDown = false;
+
 		this.modal = undefined;
 
 		// vars
@@ -1687,6 +1698,7 @@
 	}
 	Editor.prototype.redraw = function() {
 		var self = this;
+		console.log("REDRAW");
 		console.log(settings);
 		// Calculate canvas dimensions
 		var size = self.getCanvasDefaultSize();
@@ -1714,7 +1726,7 @@
 			// Redraw editor
 			console.log($.image_map_pro_editor_current_settings().general.background_image_color);
 			//Change Background_image
-			//$('#wcp-editor-center').css('background-color', $.image_map_pro_editor_current_settings().general.background_image_color);
+			$('#wcp-editor-canvas').css('background-color', $.image_map_pro_editor_current_settings().general.background_image_color);
 
 			$('#wcp-editor-canvas').html($.image_map_pro_editor_content());
 			//Html the title
@@ -1726,7 +1738,7 @@
 
 			if( $('[data-wcp-main-tab-content-name="Image Map"]').is(":visible") ){
 				$('#wcp-editor-canvas').css('display','none');
-				console.log("uuuuuuuuuuuuuuuuuuuh");
+				
 			}
 			//$(".wcp-general-settings").children().hide();
 			$('#imp-editor-image').css({
@@ -2904,6 +2916,79 @@
 
 			returnValue = false;
 		}
+		// i
+		if(e.keyCode == 73){
+			this.iKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="spot"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('spot');
+
+			returnValue = false;
+		}
+		// v
+		if(e.keyCode == 86){
+			this.vKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="select"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('select');
+
+			returnValue = false;
+		}
+		// g
+		if(e.keyCode == 71){
+			this.gKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="geo"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('geo');
+
+			returnValue = false;
+		}
+		// l
+		if(e.keyCode == 76){
+			this.lKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="infoslegale"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('infoslegale');
+
+			returnValue = false;
+		}
+		// o
+		if(e.keyCode == 79){
+			this.oKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="oval"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('oval');
+
+			returnValue = false;
+		}
+		// r
+		if(e.keyCode == 82){
+			this.rKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="rect"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('rect');
+
+			returnValue = false;
+		}
+		// h
+		if(e.keyCode == 72){
+			this.hKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="drag"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('drag');
+
+			returnValue = false;
+		}
+		// p
+		if(e.keyCode == 80){
+			this.pKeyDown = true;
+			$('.wcp-editor-toolbar-button').removeClass('wcp-active');
+			$('[data-wcp-editor-toolbar-button-name="poly"]').addClass('wcp-active');
+			$.wcpEditorEventSelectedTool('poly');
+
+			returnValue = false;
+		}
+		
 		//ESCAPE
 		if(e.keyCode == 27 && (m.length == 0 || m.css('display') == 'none')){
 			this.escapeKeyDown = true;
@@ -3055,6 +3140,46 @@
 		//ESCAPE
 		if(e.keyCode == 27){
 			self.escapeKeyDown = false;
+			returnValue = true;
+		}
+		//i
+		if(e.keyCode == 73){
+			self.iKeyDown = false;
+			returnValue = true;
+		}
+		//v
+		if(e.keyCode == 86){
+			self.vKeyDown = false;
+			returnValue = true;
+		}
+		//g
+		if(e.keyCode == 71){
+			self.gKeyDown = false;
+			returnValue = true;
+		}
+		//l
+		if(e.keyCode == 76){
+			self.lKeyDown = false;
+			returnValue = true;
+		}
+		//o
+		if(e.keyCode == 79){
+			self.oKeyDown = false;
+			returnValue = true;
+		}
+		//r
+		if(e.keyCode == 82){
+			self.rKeyDown = false;
+			returnValue = true;
+		}
+		//p
+		if(e.keyCode == 80){
+			self.pKeyDown = false;
+			returnValue = true;
+		}
+		//h
+		if(e.keyCode == 72){
+			self.hKeyDown = false;
 			returnValue = true;
 		}
 		//TAB
