@@ -38,7 +38,7 @@
     align-items: center;
 }
 .sq-add-container span {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
 }
@@ -103,7 +103,7 @@
     line-height: 32px;
     text-align: center;
     color: white;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     width: 64px;
@@ -162,7 +162,7 @@
     -webkit-box-sizing: border-box;
 }
 .sq-window {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     background: white;
@@ -175,9 +175,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     color: #222;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 400;
 }
@@ -216,6 +215,7 @@
     text-align: center;
     line-height: 41px;
     cursor: pointer;
+    visibility: hidden;
 }
 .sq-window-close:hover {
     color: #222;
@@ -451,7 +451,7 @@
     position: absolute;
     background: white;
     color: #222;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: 400;
     cursor: grabbing;
@@ -494,6 +494,7 @@
     word-break: break-all;
     position: relative;
     min-height: 18px;
+    word-wrap: break-word;
 }
 .sq-element.sq-element-selected:before {
     display: block;

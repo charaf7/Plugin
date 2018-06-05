@@ -1746,12 +1746,12 @@ $$1.extend($$1.summernote.lang, {
         },
         link: {
             link: 'Link',
-            insert: 'Insert Link',
+            insert: 'Insérer un lien',
             unlink: 'Unlink',
             edit: 'Edit',
-            textToDisplay: 'Text to display',
-            url: 'To what URL should this link go?',
-            openInNewWindow: 'Open in new window'
+            textToDisplay: 'Texte',
+            url: 'Rediriger vers le lien',
+            openInNewWindow: 'Ouvrir dans une nouvelle fenêtre'
         },
         table: {
             table: 'Table',
@@ -7130,9 +7130,9 @@ $$1.summernote = $$1.extend($$1.summernote, {
         maxTextLength: 0,
         styleTags: ['p', 'blockquote', 'pre', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
         fontNames: [
-            'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
+            'Open Sans', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New',
             'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande',
-            'Tahoma', 'Times New Roman', 'Verdana'
+            'Tahoma', 'Times New Roman', 'Verdana', 
         ],
         fontSizes: ['8', '9', '10', '11', '12', '14', '18', '24', '36'],
         // pallete colors(n x n)

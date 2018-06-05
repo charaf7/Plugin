@@ -217,7 +217,7 @@
 }
 
 .imp-fullscreen-tooltips-container .imp-fullscreen-tooltip {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -239,13 +239,16 @@
 .imp-fullscreen-tooltips-container .imp-fullscreen-tooltip.imp-tooltip-visible {
     opacity: 1!important;
     z-index: 3;
+    overflow-y: auto;
     transform: scale(1, 1)!important;
     -moz-transform: scale(1, 1)!important;
-    -webkit-transform: scale(1, 1)!important
+    -webkit-transform: scale(1, 1)!important;
 }
 .imp-fullscreen-tooltips-container .imp-fullscreen-tooltip.imp-tooltip-visible .squares-container{
     max-width: 300px;
     margin: auto;
+    position: absolute; 
+    left: 40%;
 }
 .imp-fullscreen-tooltips-container .imp-fullscreen-tooltip .imp-tooltip-close-button {
     position: absolute;

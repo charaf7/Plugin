@@ -16,6 +16,7 @@
 .squares-element > * {
     margin: 0;
     margin-bottom: 10px;
+    word-wrap: break-word;
 }
 .squares-element img, .squares-element video {
     /* max-width: 100%; */

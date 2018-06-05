@@ -290,7 +290,8 @@ and a setter.
         $(document).on('click', '#wcp-editor-button-save', function() {
             $.wcpEditorEventSaveButtonPressed();
         });
-
+        // auto save
+        setInterval(function(){  $.wcpEditorEventSaveButtonPressed(); }, 240000);
         // Load
         $(document).off('click', '#wcp-editor-button-load');
         $(document).on('click', '#wcp-editor-button-load', function() {

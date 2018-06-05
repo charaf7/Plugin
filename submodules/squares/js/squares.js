@@ -1680,7 +1680,7 @@ The usage scenario is the following (for now):
             ||  registeredElements[i].name === "SketchFab"
             ||  registeredElements[i].name === "Gallerie d'images"
             ||  registeredElements[i].name === "Heading"
-            ||  registeredElements[i].name === "Quizz"
+            ||  registeredElements[i].name === "Quiz"
             ||  registeredElements[i].name === "YouTube"
             // ||  registeredElements[i].name === "Button"
             ||  registeredElements[i].name === "Video")) {
@@ -1692,7 +1692,7 @@ The usage scenario is the following (for now):
                 ||  registeredElements[i].name === "Heading"
                 ||  registeredElements[i].name === "YouTube"
                 ||  registeredElements[i].name === "Jours et Heures"
-                ||  registeredElements[i].name === "Quizz"
+                ||  registeredElements[i].name === "Quiz"
                 ||  registeredElements[i].name === "Tarifs"
                 ||  registeredElements[i].name === "Adresse"
                 ||  registeredElements[i].name === "Site & Médias"

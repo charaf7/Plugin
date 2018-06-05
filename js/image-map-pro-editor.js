@@ -3058,14 +3058,14 @@
 			}
 		}
 		// CTRL + C
-		if (e.keyCode == 67) {
+		if (e.keyCode == 67 && $('.note-editor').length == 0) {
 			if (this.ctrlKeyDown || this.commandKeyDown) {
 				$.wcpEditorEventListItemTitleButtonPressed('copy');
 				returnValue = true;
 			}
 		}
 		// CTRL + v
-		if (e.keyCode == 86) {
+		if (e.keyCode == 86 && $('.note-editor').length == 0) {
 			if (this.ctrlKeyDown || this.commandKeyDown) {
 				$.wcpEditorEventListItemTitleButtonPressed('paste');
 				returnValue = true;
@@ -3357,8 +3357,8 @@
 
 		var s = $.extend(true, {}, default_spot_settings);
 		s.type = 'infoslegale';
-		s.default_style.icon_svg_path = $.webcraft_icon_library[32][1];
-		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[32][0];
+		s.default_style.icon_svg_path = $.webcraft_icon_library[175][1];
+		s.default_style.icon_svg_viewbox = $.webcraft_icon_library[175][0];
 		s.id = self.createIdForInfos();
 		s.title = s.id;
 
